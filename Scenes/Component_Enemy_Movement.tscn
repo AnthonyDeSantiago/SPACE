@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://buq114rp88l88"]
+
+[ext_resource type="Script" path="res://Scripts/Component_Enemy_Movement.gd" id="1_6kpjf"]
+[ext_resource type="Texture2D" uid="uid://cqjvwauewl0tw" path="res://Art/Test.png" id="2_ou3l7"]
+
+[node name="Component_Enemy_Movement" type="CharacterBody2D"]
+script = ExtResource("1_6kpjf")
+
+[node name="Test" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("2_ou3l7")
