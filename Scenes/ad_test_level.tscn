@@ -5,3 +5,9 @@
 [node name="AD_Test_Level" type="Node2D"]
 
 [node name="Component_Enemy_Movement" parent="." instance=ExtResource("2_f0ptg")]
+
+[node name="Component_Enemy_Movement2" parent="." instance=ExtResource("2_f0ptg")]
+position = Vector2(782, 78)
+
+[node name="Component_Enemy_Movement3" parent="." instance=ExtResource("2_f0ptg")]
+position = Vector2(471, 496)

@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var health = 100
 
 @onready var target = position
-@onready var anim = get_node("AnimatedSprite2D")
+@onready var anim = get_node("Marker2D/AnimatedSprite2D")
 
 func _physics_process(delta):
 	anim.play("run")
