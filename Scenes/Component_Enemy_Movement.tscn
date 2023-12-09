@@ -1,11 +1,28 @@
-[gd_scene load_steps=14 format=3 uid="uid://buq114rp88l88"]
+[gd_scene load_steps=19 format=3 uid="uid://buq114rp88l88"]
 
 [ext_resource type="Script" path="res://Scripts/Component_Enemy_Movement.gd" id="1_6kpjf"]
 [ext_resource type="Texture2D" uid="uid://cvlxryj3nj4ge" path="res://Art/lil_guy-Sheet.png" id="2_ku0km"]
 [ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="2_nm5p6"]
+[ext_resource type="Texture2D" uid="uid://cfroxsiif47tl" path="res://Art/lil_guy-Death-Sheet.png" id="3_oeg1b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3st1"]
 size = Vector2(67, 83)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_870c4"]
+atlas = ExtResource("3_oeg1b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmij6"]
+atlas = ExtResource("3_oeg1b")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjjtd"]
+atlas = ExtResource("3_oeg1b")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ua8g"]
+atlas = ExtResource("3_oeg1b")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jw2bf"]
 atlas = ExtResource("2_ku0km")
@@ -41,6 +58,23 @@ region = Rect2(112, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bkqq6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_870c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmij6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjjtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ua8g")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jw2bf")
@@ -87,4 +121,6 @@ position = Vector2(-3, -15.5)
 rotation = 1.5708
 scale = Vector2(5.125, 4.9375)
 sprite_frames = SubResource("SpriteFrames_bkqq6")
-animation = &"run"
+animation = &"death"
+frame = 1
+frame_progress = 0.105734
