@@ -117,8 +117,5 @@ character_target = NodePath("../simple_char")
 position = Vector2(471, 496)
 character_target = NodePath("../simple_char")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(515, 259)
-
 [node name="simple_char" parent="." instance=ExtResource("4_7inbn")]
 position = Vector2(213, 384)

@@ -23,3 +23,8 @@ position = Vector2(60, 0)
 [node name="Char" type="Sprite2D" parent="Marker2D"]
 scale = Vector2(5, 5)
 texture = ExtResource("2_l1718")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+limit_left = -100
+limit_top = -100
