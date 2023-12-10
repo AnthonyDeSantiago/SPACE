@@ -9,9 +9,13 @@ radius = 9.0
 [node name="Simple_Projectile" type="CharacterBody2D"]
 script = ExtResource("1_fwkot")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8303x")
-
 [node name="SimpleProj" type="Sprite2D" parent="."]
 scale = Vector2(1.0625, 1.125)
 texture = ExtResource("2_21tm7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_8303x")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

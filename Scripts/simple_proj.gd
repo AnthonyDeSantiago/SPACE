@@ -8,3 +8,10 @@ class_name Simple_Projectile
 func _physics_process(delta):
 	velocity = direction * SPEED
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	if body.has_node("Marker2D"):
+		print("Hit with Marker2D")
+		queue_free()
+	queue_free()
