@@ -6,10 +6,12 @@ extends CharacterBody2D
 
 @onready var target = position
 @onready var anim = get_node("Marker2D/AnimatedSprite2D")
+@onready var marker: Marker2D = get_node("Marker2D")
 
 func _physics_process(delta):
 	anim.play("run")
 	target = character_target.position
+	marker.look_at(target)
 	velocity = position.direction_to(target) * speed
 	# look_at(target)
 	if position.distance_to(target) > 10:

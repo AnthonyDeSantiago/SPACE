@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://buq114rp88l88"]
+[gd_scene load_steps=18 format=3 uid="uid://buq114rp88l88"]
 
 [ext_resource type="Script" path="res://Scripts/Component_Enemy_Movement.gd" id="1_6kpjf"]
 [ext_resource type="Texture2D" uid="uid://cvlxryj3nj4ge" path="res://Art/lil_guy-Sheet.png" id="2_ku0km"]
-[ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="2_nm5p6"]
 [ext_resource type="Texture2D" uid="uid://cfroxsiif47tl" path="res://Art/lil_guy-Death-Sheet.png" id="3_oeg1b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_45110"]
@@ -116,7 +115,6 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_45110")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-script = ExtResource("2_nm5p6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Marker2D"]
 position = Vector2(-3, -16)
