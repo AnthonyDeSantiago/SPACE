@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://djqldkhfm7mwj"]
+
+[ext_resource type="Script" path="res://Scripts/simple_char.gd" id="1_u21o5"]
+[ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="1_umd6g"]
+[ext_resource type="Texture2D" uid="uid://dgfkl2ec0jsjt" path="res://Art/char.png" id="2_l1718"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_42fxx"]
+
+[node name="simple_char" type="CharacterBody2D"]
+script = ExtResource("1_u21o5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_42fxx")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+script = ExtResource("1_umd6g")
+
+[node name="Char" type="Sprite2D" parent="Marker2D"]
+scale = Vector2(5, 5)
+texture = ExtResource("2_l1718")
