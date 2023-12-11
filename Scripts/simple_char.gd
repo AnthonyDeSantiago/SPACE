@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var SPEED = 800.0
+@export var SPEED = 500.0
 
 @onready var projectile_scene = preload("res://Scenes/simple_proj.tscn")
 @onready var proj_spawner = $Marker2D/Proj_Spawner
