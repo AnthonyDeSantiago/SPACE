@@ -29,6 +29,7 @@ texture = ExtResource("2_l1718")
 position = Vector2(40, 0)
 scale = Vector2(0.250692, 0.25)
 energy = 5.0
+shadow_enabled = true
 texture = ExtResource("4_3sp3q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
