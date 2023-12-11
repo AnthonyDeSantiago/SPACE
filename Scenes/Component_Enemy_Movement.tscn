@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://buq114rp88l88"]
+[gd_scene load_steps=23 format=3 uid="uid://buq114rp88l88"]
 
 [ext_resource type="Script" path="res://Scripts/Component_Enemy_Movement.gd" id="1_6kpjf"]
+[ext_resource type="PackedScene" uid="uid://4nk0agbfrtji" path="res://Scenes/component_health.tscn" id="2_btsbt"]
 [ext_resource type="Texture2D" uid="uid://cvlxryj3nj4ge" path="res://Art/lil_guy-Sheet.png" id="2_ku0km"]
 [ext_resource type="Texture2D" uid="uid://cfroxsiif47tl" path="res://Art/lil_guy-Death-Sheet.png" id="3_oeg1b"]
 
@@ -73,7 +74,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"death",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -104,23 +105,6 @@ animations = [{
 "name": &"run",
 "speed": 17.0
 }]
-
-[sub_resource type="Animation" id="Animation_y0tyt"]
-resource_name = "running"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
 
 [sub_resource type="Animation" id="Animation_nbiri"]
 length = 0.001
@@ -154,6 +138,23 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_y0tyt"]
+resource_name = "running"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nauaj"]
 _data = {
 "RESET": SubResource("Animation_nbiri"),
@@ -163,6 +164,10 @@ _data = {
 
 [node name="Component_Enemy_Movement" type="CharacterBody2D"]
 script = ExtResource("1_6kpjf")
+
+[node name="Component_Health" parent="." instance=ExtResource("2_btsbt")]
+position = Vector2(-47, -49)
+scale = Vector2(0.6, 0.7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
