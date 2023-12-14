@@ -9,7 +9,6 @@ script = ExtResource("1_a1aum")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true
-z_index = 1
 offset_right = 152.0
 offset_bottom = 9.0
 value = 100.0
