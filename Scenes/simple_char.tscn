@@ -36,3 +36,5 @@ texture = ExtResource("4_3sp3q")
 unique_name_in_owner = true
 limit_left = -100
 limit_top = -100
+limit_right = 1200
+limit_bottom = 800

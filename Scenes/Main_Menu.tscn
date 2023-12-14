@@ -29,4 +29,5 @@ offset_bottom = 393.0
 text = "High Score"
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="Play_Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]

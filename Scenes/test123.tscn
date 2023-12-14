@@ -4,5 +4,5 @@
 
 [node name="Test" type="Sprite2D"]
 position = Vector2(481, 399.667)
-scale = Vector2(10.5, 9.33333)
+scale = Vector2(245.021, 15.8223)
 texture = ExtResource("1_521i4")
