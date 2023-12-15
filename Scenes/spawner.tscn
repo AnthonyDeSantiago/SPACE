@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqd3dppvs4hd2"]
+[gd_scene load_steps=3 format=3 uid="uid://cx4re37ncvtwr"]
 
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="1_xsmy6"]
-[ext_resource type="PackedScene" uid="uid://rnwd2gfbm7uv" path="res://Scenes/Component_Enemy_Movement.tscn" id="2_rqwen"]
+[ext_resource type="PackedScene" uid="uid://buq114rp88l88" path="res://Scenes/Component_Enemy_Movement.tscn" id="2_rqwen"]
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_xsmy6")
 metadata/Enemies = [ExtResource("2_rqwen")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 1.551
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

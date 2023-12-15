@@ -1,8 +1,14 @@
 extends Node2D
 
 @export var character: CharacterBody2D
+@export var spawn_countdown: float = 5.0
 
 @onready var enemies_array = get_meta("Enemies")
+@onready var timer: Timer
+
+func _enter_tree():
+	timer = $Timer
+	timer.wait_time = spawn_countdown
 
 func _on_timer_timeout():
 	spawn()
