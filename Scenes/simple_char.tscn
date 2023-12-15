@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://djqldkhfm7mwj"]
+[gd_scene load_steps=6 format=3 uid="uid://d0gv824dlh8tl"]
 
 [ext_resource type="Script" path="res://Scripts/simple_char.gd" id="1_u21o5"]
 [ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="1_umd6g"]
-[ext_resource type="Texture2D" uid="uid://dgfkl2ec0jsjt" path="res://Art/char.png" id="2_l1718"]
+[ext_resource type="Texture2D" uid="uid://dfdw5a7rp8054" path="res://Art/player1.png" id="3_ioft6"]
 [ext_resource type="Texture2D" uid="uid://csgdpmf6cujc0" path="res://Art/Flash_Light.png" id="4_3sp3q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_42fxx"]
@@ -11,6 +11,7 @@
 script = ExtResource("1_u21o5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 3)
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_42fxx")
 disabled = true
@@ -23,11 +24,11 @@ position = Vector2(60, 0)
 
 [node name="Char" type="Sprite2D" parent="Marker2D"]
 scale = Vector2(5, 5)
-texture = ExtResource("2_l1718")
+texture = ExtResource("3_ioft6")
 
 [node name="PointLight2D" type="PointLight2D" parent="Marker2D/Char"]
-position = Vector2(40, 0)
-scale = Vector2(0.250692, 0.25)
+position = Vector2(58.8, 0.2)
+scale = Vector2(0.33342, 0.3325)
 energy = 5.0
 shadow_enabled = true
 texture = ExtResource("4_3sp3q")
