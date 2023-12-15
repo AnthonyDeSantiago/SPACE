@@ -14,9 +14,9 @@ func _on_timer_timeout():
 	spawn()
 
 func spawn():
-	var enemy = enemies_array[0].instantiate()
-	enemy.global_position = global_position
+	var enemy_mob = enemies_array[0].instantiate()
+	enemy_mob.global_position = global_position
 	
 	#enemy.set_character_target(character)
-	get_parent().add_child(enemy)
+	get_parent().add_child(enemy_mob)
 	
