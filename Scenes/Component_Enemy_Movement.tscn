@@ -1,7 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://buq114rp88l88"]
+[gd_scene load_steps=23 format=3 uid="uid://rnwd2gfbm7uv"]
 
 [ext_resource type="Script" path="res://Scripts/Component_Enemy_Movement.gd" id="1_6kpjf"]
-[ext_resource type="PackedScene" uid="uid://4nk0agbfrtji" path="res://Scenes/component_health.tscn" id="2_btsbt"]
+[ext_resource type="PackedScene" uid="uid://b3nhpogcj2g6v" path="res://Scenes/component_health.tscn" id="2_btsbt"]
 [ext_resource type="Texture2D" uid="uid://cvlxryj3nj4ge" path="res://Art/lil_guy-Sheet.png" id="2_ku0km"]
 [ext_resource type="Texture2D" uid="uid://cfroxsiif47tl" path="res://Art/lil_guy-Death-Sheet.png" id="3_oeg1b"]
 

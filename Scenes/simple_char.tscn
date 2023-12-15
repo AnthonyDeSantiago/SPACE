@@ -5,15 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://dfdw5a7rp8054" path="res://Art/player1.png" id="3_ioft6"]
 [ext_resource type="Texture2D" uid="uid://csgdpmf6cujc0" path="res://Art/Flash_Light.png" id="4_3sp3q"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_42fxx"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l38oc"]
+radius = 14.75
+height = 39.0
 
 [node name="simple_char" type="CharacterBody2D"]
 script = ExtResource("1_u21o5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 3)
+position = Vector2(-19, 0)
 scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_42fxx")
+shape = SubResource("CapsuleShape2D_l38oc")
 disabled = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -27,8 +29,8 @@ scale = Vector2(5, 5)
 texture = ExtResource("3_ioft6")
 
 [node name="PointLight2D" type="PointLight2D" parent="Marker2D/Char"]
-position = Vector2(58.8, 0.2)
-scale = Vector2(0.33342, 0.3325)
+position = Vector2(62.8, 0.2)
+scale = Vector2(0.33342, 0.57875)
 energy = 5.0
 shadow_enabled = true
 texture = ExtResource("4_3sp3q")
