@@ -1,13 +1,106 @@
-[gd_scene load_steps=6 format=3 uid="uid://djqldkhfm7mwj"]
+[gd_scene load_steps=20 format=3 uid="uid://d0gv824dlh8tl"]
 
 [ext_resource type="Script" path="res://Scripts/simple_char.gd" id="1_u21o5"]
 [ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="1_umd6g"]
-[ext_resource type="Texture2D" uid="uid://dfdw5a7rp8054" path="res://Art/player1.png" id="3_ioft6"]
 [ext_resource type="Texture2D" uid="uid://csgdpmf6cujc0" path="res://Art/Flash_Light.png" id="4_3sp3q"]
+[ext_resource type="Texture2D" uid="uid://emynobwnbptj" path="res://Art/light_source.png" id="4_jq218"]
+[ext_resource type="Texture2D" uid="uid://y47jj3vnqexd" path="res://Art/player_walk-Sheet.png" id="6_8pqti"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l38oc"]
 radius = 14.75
 height = 39.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq7yh"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(0, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfirt"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(36, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkda0"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(72, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mirpn"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(108, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4qwh"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(144, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1a0y"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(180, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to6fv"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(216, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv0m3"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(252, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m85j"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(288, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wmd8"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(324, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74n4g"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(360, 0, 36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aca5h"]
+atlas = ExtResource("6_8pqti")
+region = Rect2(396, 0, 36, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_515qh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq7yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfirt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkda0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mirpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4qwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1a0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to6fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv0m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m85j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wmd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74n4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aca5h")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
 
 [node name="simple_char" type="CharacterBody2D"]
 script = ExtResource("1_u21o5")
@@ -24,13 +117,22 @@ script = ExtResource("1_umd6g")
 [node name="Proj_Spawner" type="Marker2D" parent="Marker2D"]
 position = Vector2(60, 0)
 
-[node name="Char" type="Sprite2D" parent="Marker2D"]
-scale = Vector2(5, 5)
-texture = ExtResource("3_ioft6")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Marker2D"]
+position = Vector2(-4.99998, -2)
+scale = Vector2(4.9375, 4.9375)
+sprite_frames = SubResource("SpriteFrames_515qh")
+animation = &"run"
 
-[node name="PointLight2D" type="PointLight2D" parent="Marker2D/Char"]
-position = Vector2(69.4, 0)
-scale = Vector2(0.33342, 0.57875)
+[node name="PointLight2D2" type="PointLight2D" parent="Marker2D/AnimatedSprite2D"]
+position = Vector2(0.60759, 0.405063)
+scale = Vector2(0.316119, 0.339191)
+energy = 5.0
+shadow_enabled = true
+texture = ExtResource("4_jq218")
+
+[node name="PointLight2D" type="PointLight2D" parent="Marker2D/AnimatedSprite2D"]
+position = Vector2(70.076, 0)
+scale = Vector2(0.337641, 0.586076)
 energy = 5.0
 shadow_enabled = true
 texture = ExtResource("4_3sp3q")

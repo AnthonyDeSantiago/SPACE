@@ -5,23 +5,31 @@ extends CharacterBody2D
 
 @onready var projectile_scene = preload("res://Scenes/simple_proj.tscn")
 @onready var proj_spawner = $Marker2D/Proj_Spawner
+@onready var anim = $Marker2D/AnimatedSprite2D
 
 
 
 func _physics_process(delta):
 	
+	#anim.play("run")
 	var vertical = Input.get_axis("up", "down")
 	var horizontal = Input.get_axis("left", "right")
 	
 	if vertical:
 		velocity.y = vertical * SPEED
+		anim.play("run")
 	else:
 		velocity.y = 0
+		if horizontal == 0:
+			anim.stop()
 		
 	if horizontal:
 		velocity.x = horizontal * SPEED
+		anim.play("run")
 	else:
 		velocity.x = 0
+		if vertical == 0:
+			anim.stop()
 	move_and_slide()
 	  
 func _input(event):
