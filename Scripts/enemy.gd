@@ -6,7 +6,6 @@ class_name enemy
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var target_body: CharacterBody2D
-@onready var target: Vector2
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 @onready var direction: Vector2
 
@@ -21,9 +20,7 @@ func _physics_process(delta):
 		print("Enemy has no player reference!")
 		pass
 	else:
-		print("Things are running")
-		target = target_body.position
-		nav.target_position = target
+		nav.target_position = target_body.position
 		direction = (nav.get_next_path_position() - global_position).normalized()
 		velocity = velocity.lerp(direction * speed, accel * delta)
 		move_and_slide()

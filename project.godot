@@ -52,10 +52,6 @@ right={
 ]
 }
 
-[navigation]
-
-2d/default_cell_size=16.0
-
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
