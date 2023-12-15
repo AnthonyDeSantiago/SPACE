@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsxddj7praybw"]
+
+[ext_resource type="PackedScene" uid="uid://4c0icsbrhjad" path="res://Scenes/component_signal_reciever.tscn" id="1_cedrs"]
+[ext_resource type="PackedScene" uid="uid://bt1urefrn2ic0" path="res://Scenes/component_signal_emitter.tscn" id="2_nd0fo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Component_Signal_Reciever" parent="." instance=ExtResource("1_cedrs")]
+
+[node name="Component_Signal_Emitter" parent="." instance=ExtResource("2_nd0fo")]

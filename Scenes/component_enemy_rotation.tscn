@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djcjnmvb4b3na"]
+
+[ext_resource type="Script" path="res://Scripts/Component_Enemy_Rotation.gd" id="1_cwyst"]
+
+[node name="Component_Enemy_Rotation" type="Node2D"]
+script = ExtResource("1_cwyst")
