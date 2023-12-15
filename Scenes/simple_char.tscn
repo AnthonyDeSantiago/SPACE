@@ -29,7 +29,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("3_ioft6")
 
 [node name="PointLight2D" type="PointLight2D" parent="Marker2D/Char"]
-position = Vector2(62.8, 0.2)
+position = Vector2(69.4, 0)
 scale = Vector2(0.33342, 0.57875)
 energy = 5.0
 shadow_enabled = true
