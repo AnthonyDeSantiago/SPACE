@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhb4mqu6oa5sw"]
+[gd_scene load_steps=23 format=3 uid="uid://dhb4mqu6oa5sw"]
 
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_ed44a"]
 [ext_resource type="PackedScene" uid="uid://cqd3dppvs4hd2" path="res://Scenes/spawner.tscn" id="2_bqv8q"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://c4sqtoid3sqpy" path="res://Art/UI_Art/Health_Bar_Fill.png" id="7_oq3cs"]
 [ext_resource type="Texture2D" uid="uid://dghessuscq8fr" path="res://Art/UI_Art/Health_Bar_Boundaryl.png" id="7_w6wkt"]
 [ext_resource type="FontFile" uid="uid://bkq320xoojj7b" path="res://Art/UI_Art/CONCHARS.png" id="10_7o4x7"]
+[ext_resource type="Texture2D" uid="uid://dqo7r6by1na8r" path="res://Art/UI_Art/empty_button.png" id="11_qmhb5"]
+[ext_resource type="Texture2D" uid="uid://b8h2f21dxflnx" path="res://Art/UI_Art/empty_button_hover.png" id="12_oei43"]
+[ext_resource type="Texture2D" uid="uid://bm1wpagblab75" path="res://Art/UI_Art/empty_button_pressed.png" id="12_ucsna"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1sbgy"]
 texture = ExtResource("2_hdnbv")
@@ -117,6 +120,14 @@ font_size = 32
 font = ExtResource("10_7o4x7")
 font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_vrn6s"]
+font = ExtResource("10_7o4x7")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_mfno5"]
+font = ExtResource("10_7o4x7")
+font_size = 32
+
 [node name="Anthony_Level" type="Node2D"]
 script = ExtResource("1_ed44a")
 
@@ -180,6 +191,42 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_alcfc")
 
+[node name="Game_Over_Screen" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game_Over_Screen"]
+offset_left = 323.0
+offset_top = 206.0
+offset_right = 899.0
+offset_bottom = 270.0
+
+[node name="Game_Over_Text" type="Label" parent="Game_Over_Screen/VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_vrn6s")
+
+[node name="Play_Again_Button" type="TextureButton" parent="Game_Over_Screen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("11_qmhb5")
+texture_pressed = ExtResource("12_ucsna")
+texture_hover = ExtResource("12_oei43")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Game_Over_Screen/VBoxContainer/Play_Again_Button"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 35.0
+offset_right = 451.0
+offset_bottom = 67.0
+text = "Play Again"
+label_settings = SubResource("LabelSettings_mfno5")
+
+[node name="Spawner2" parent="." instance=ExtResource("2_bqv8q")]
+position = Vector2(1103, 59)
+
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="player_was_hurt" from="simple_char" to="." method="_on_simple_char_player_was_hurt"]
+[connection signal="pressed" from="Game_Over_Screen/VBoxContainer/Play_Again_Button" to="." method="_on_play_again_button_pressed"]
