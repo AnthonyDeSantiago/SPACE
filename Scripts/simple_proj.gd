@@ -18,3 +18,7 @@ func _on_area_2d_body_entered(body):
 		component_health.take_damage(damage)
 		queue_free()
 	queue_free()
+
+
+func _on_queue_free_timer_timeout():
+	queue_free()

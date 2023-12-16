@@ -6,8 +6,11 @@ extends CharacterBody2D
 @onready var projectile_scene = preload("res://Scenes/simple_proj.tscn")
 @onready var proj_spawner = $Marker2D/Proj_Spawner
 @onready var anim = $Marker2D/AnimatedSprite2D
+@onready var area: Area2D = $Area2D
+@onready var timer_invulnerability: Timer = $Timer
+@onready var is_invulnerable = false
 
-
+signal player_was_hurt(damage)
 
 func _physics_process(delta):
 	
@@ -34,10 +37,21 @@ func _physics_process(delta):
 	  
 func _input(event):
 	if event.is_action_pressed("click"):
-		print("YO we clicked")
 		var new_projectile: CharacterBody2D = projectile_scene.instantiate()
 		
 		print(new_projectile.position)
 		new_projectile.global_position = proj_spawner.global_position
 		get_parent().add_child(new_projectile)
 		
+
+
+func _on_area_2d_body_entered(body):
+	if body is enemy and area.monitorable:
+		player_was_hurt.emit(body.damage)
+		area.set_deferred("monitoring", false)
+		timer_invulnerability.start()
+		
+
+
+func _on_invulnerability_timeout():
+	area.set_deferred("monitoring", true)

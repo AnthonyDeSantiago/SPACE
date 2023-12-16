@@ -1,4 +1,5 @@
 extends Node2D
+class_name Spawner
 
 @export var character: CharacterBody2D
 @export var spawn_countdown: float = 5.0
@@ -9,9 +10,6 @@ extends Node2D
 func _enter_tree():
 	timer = $Timer
 	timer.wait_time = spawn_countdown
-
-func _on_timer_timeout():
-	spawn()
 
 func spawn():
 	var enemy_mob = enemies_array[0].instantiate()

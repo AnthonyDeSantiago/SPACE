@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d0gv824dlh8tl"]
+[gd_scene load_steps=20 format=3 uid="uid://djqldkhfm7mwj"]
 
 [ext_resource type="Script" path="res://Scripts/simple_char.gd" id="1_u21o5"]
 [ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="1_umd6g"]
@@ -103,13 +103,21 @@ animations = [{
 }]
 
 [node name="simple_char" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_u21o5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-19, 0)
-scale = Vector2(4, 4)
+scale = Vector2(2.5, 2.5)
 shape = SubResource("CapsuleShape2D_l38oc")
-disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-19, 0)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CapsuleShape2D_l38oc")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 script = ExtResource("1_umd6g")
@@ -119,7 +127,7 @@ position = Vector2(60, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Marker2D"]
 position = Vector2(-4.99998, -2)
-scale = Vector2(4.9375, 4.9375)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_515qh")
 animation = &"run"
 
@@ -139,7 +147,8 @@ texture = ExtResource("4_3sp3q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
-limit_left = -100
-limit_top = -100
-limit_right = 1200
-limit_bottom = 800
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_invulnerability_timeout"]

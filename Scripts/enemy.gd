@@ -3,6 +3,7 @@ class_name enemy
 
 @export var speed = 400
 @export var accel = 7
+@export var damage = 10
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var target_body: CharacterBody2D
@@ -12,7 +13,6 @@ class_name enemy
 func enemy_set_target(target: CharacterBody2D):
 	$Component_Enemy_Rotation.target_body = target
 	target_body = target
-	print("enemy has target")
 
 func _physics_process(delta):
 	anim.play("run")
