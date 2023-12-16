@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dhb4mqu6oa5sw"]
+[gd_scene load_steps=30 format=3 uid="uid://dhb4mqu6oa5sw"]
 
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_ed44a"]
 [ext_resource type="PackedScene" uid="uid://cqd3dppvs4hd2" path="res://Scenes/spawner.tscn" id="2_bqv8q"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://qj2mk4qk4own" path="res://Art/Light_Rotate.png" id="16_enild"]
 [ext_resource type="Script" path="res://Scripts/Alarm_Rotating.gd" id="17_fsl64"]
 [ext_resource type="Script" path="res://Scenes/Typed_Text.gd" id="18_64oxe"]
+[ext_resource type="AudioStream" uid="uid://bb18aksg68i2y" path="res://Audio/Race to Mars.mp3" id="19_huv8p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1sbgy"]
 texture = ExtResource("2_hdnbv")
@@ -167,6 +168,12 @@ position = Vector2(2165, 1095)
 
 [node name="simple_char" parent="." instance=ExtResource("3_t6bh1")]
 position = Vector2(401, 454)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="simple_char"]
+position = Vector2(-16, 0)
+stream = ExtResource("19_huv8p")
+volume_db = -10.0
+autoplay = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_ifv4b")
@@ -366,6 +373,7 @@ script = ExtResource("18_64oxe")
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="player_regen" from="simple_char" to="." method="_on_simple_char_player_regen"]
 [connection signal="player_was_hurt" from="simple_char" to="." method="_on_simple_char_player_was_hurt"]
 [connection signal="pressed" from="Game_Over_Screen/VBoxContainer/Play_Again_Button" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="Game_Over_Screen/VBoxContainer/Main_Menu_Button" to="." method="_on_main_menu_button_pressed"]

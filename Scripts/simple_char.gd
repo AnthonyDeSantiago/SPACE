@@ -12,6 +12,8 @@ extends CharacterBody2D
 
 signal player_was_hurt(damage)
 
+signal player_regen()
+
 func _physics_process(delta):
 	
 	#anim.play("run")
@@ -43,6 +45,8 @@ func _input(event):
 		new_projectile.global_position = proj_spawner.global_position
 		get_parent().add_child(new_projectile)
 		
+	if event.is_action_pressed("rightclick"):
+		player_regen.emit()
 
 
 func _on_area_2d_body_entered(body):

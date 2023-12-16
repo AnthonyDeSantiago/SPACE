@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb18aksg68i2y"
+path="res://.godot/imported/Race to Mars.mp3-0a9084f25d685e20d826e3a26dffbdcd.mp3str"
+
+[deps]
+
+source_file="res://Audio/Race to Mars.mp3"
+dest_files=["res://.godot/imported/Race to Mars.mp3-0a9084f25d685e20d826e3a26dffbdcd.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
