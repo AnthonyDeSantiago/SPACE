@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var enemy_kill_value = 5
-@export var spawn_start_freq = 3
+@export var spawn_start_freq = 5
 @export var spawn_accel = .95
 
 @onready var score_number = 0
@@ -51,5 +51,6 @@ func _on_main_menu_button_pressed():
 func _on_spawn_timer_timeout():
 	print("spawn")
 	spawner_array.pick_random().spawn()
-	$Spawn_Timer.wait_time = $Spawn_Timer.wait_time * spawn_accel
+	if $Spawn_Timer.wait_time >= .5:
+		$Spawn_Timer.wait_time = $Spawn_Timer.wait_time * spawn_accel
 	
