@@ -15,8 +15,6 @@ func _on_child_exiting_tree(node):
 	if node is enemy:
 		score_number += enemy_kill_value
 		score_text_number.text = str(score_number)
-		
-
 
 
 func _on_simple_char_player_was_hurt(damage):
