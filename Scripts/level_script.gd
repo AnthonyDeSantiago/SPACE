@@ -1,11 +1,22 @@
 extends Node2D
 
 @export var enemy_kill_value = 5
+@export var spawn_start_freq = 3
+@export var spawn_accel = .95
 
 @onready var score_number = 0
 @onready var score_text_number: Label = $CanvasLayer/Score/Score_Number
 @onready var health_bar: TextureProgressBar = $"CanvasLayer/HUD/Health Bar"
 @onready var game_over_screen: CanvasLayer = $Game_Over_Screen
+@onready var spawner_array := []
+
+
+func _ready():
+	$Spawn_Timer.wait_time = spawn_start_freq
+	$Spawn_Timer.start()
+	for child in get_tree().get_nodes_in_group("spawner_group"):
+		spawner_array.append(child)
+		print(spawner_array)
 
 func _on_child_entered_tree(node):
 	if node is enemy:
@@ -35,3 +46,10 @@ func _on_main_menu_button_pressed():
 	print("Main Menu pressed")
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/Main_Menu.tscn")
+
+
+func _on_spawn_timer_timeout():
+	print("spawn")
+	spawner_array.pick_random().spawn()
+	$Spawn_Timer.wait_time = $Spawn_Timer.wait_time * spawn_accel
+	

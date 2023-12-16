@@ -37,7 +37,6 @@ func _physics_process(delta):
 	  
 func _input(event):
 	if event.is_action_pressed("click"):
-		print("YO we clicked")
 		var new_projectile: CharacterBody2D = projectile_scene.instantiate()
 		
 		print(new_projectile.position)
@@ -48,7 +47,6 @@ func _input(event):
 
 func _on_area_2d_body_entered(body):
 	if body is enemy and area.monitorable:
-		print("!!! Enemy Entered !!!")
 		player_was_hurt.emit(body.damage)
 		area.set_deferred("monitoring", false)
 		timer_invulnerability.start()
@@ -56,5 +54,4 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_invulnerability_timeout():
-	print("Timeout!")
 	area.set_deferred("monitoring", true)

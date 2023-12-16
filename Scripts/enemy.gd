@@ -13,7 +13,6 @@ class_name enemy
 func enemy_set_target(target: CharacterBody2D):
 	$Component_Enemy_Rotation.target_body = target
 	target_body = target
-	print("enemy has target")
 
 func _physics_process(delta):
 	anim.play("run")
