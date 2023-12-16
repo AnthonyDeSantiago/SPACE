@@ -3,6 +3,7 @@ class_name enemy
 
 @export var speed = 400
 @export var accel = 7
+@export var damage = 10
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var target_body: CharacterBody2D
