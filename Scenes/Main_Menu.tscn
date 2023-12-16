@@ -32,5 +32,13 @@ offset_bottom = 393.0
 text = "High Score"
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 509.0
+offset_top = 121.0
+offset_right = 536.0
+offset_bottom = 133.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("2_jop0n")
+
 [connection signal="pressed" from="Play_Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]
