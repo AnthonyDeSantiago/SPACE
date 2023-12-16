@@ -54,3 +54,7 @@ func _on_spawn_timer_timeout():
 	if $Spawn_Timer.wait_time >= .5:
 		$Spawn_Timer.wait_time = $Spawn_Timer.wait_time * spawn_accel
 	
+
+
+func _on_simple_char_player_regen():
+	health_bar.value += 25

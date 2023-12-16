@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbhunhfv2fpyo"]
+[gd_scene load_steps=14 format=3 uid="uid://bbhunhfv2fpyo"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Menu.gd" id="1_fmp0a"]
 [ext_resource type="Texture2D" uid="uid://dqycb0wqwnj4e" path="res://Art/playbutton.png" id="2_jop0n"]
@@ -7,9 +7,26 @@
 [ext_resource type="Texture2D" uid="uid://p6a4sknmsnhv" path="res://Art/Starry background1.png" id="4_ucjn7"]
 [ext_resource type="Texture2D" uid="uid://hctfu0al8kn0" path="res://Art/quitbutton.png" id="6_nf1pj"]
 [ext_resource type="Texture2D" uid="uid://bv0kismltu0n" path="res://Art/quithover.png" id="7_poh1w"]
+[ext_resource type="Texture2D" uid="uid://dqo7r6by1na8r" path="res://Art/UI_Art/empty_button.png" id="8_3kdmp"]
+[ext_resource type="Texture2D" uid="uid://bm1wpagblab75" path="res://Art/UI_Art/empty_button_pressed.png" id="9_sgpdh"]
+[ext_resource type="Texture2D" uid="uid://b8h2f21dxflnx" path="res://Art/UI_Art/empty_button_hover.png" id="10_sdqu5"]
+[ext_resource type="FontFile" uid="uid://bkq320xoojj7b" path="res://Art/UI_Art/CONCHARS.png" id="11_va21s"]
+[ext_resource type="AudioStream" uid="uid://oq1goa6drccg" path="res://Audio/Billy's Sacrifice.mp3" id="12_a67js"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ym1i6"]
+font = ExtResource("11_va21s")
+font_size = 32
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_fmp0a")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 611.0
+offset_right = 322.0
+offset_bottom = 647.0
+text = "HIGHSCORE:"
+label_settings = SubResource("LabelSettings_ym1i6")
 
 [node name="HighScore_Button" type="Button" parent="."]
 offset_left = 491.0
@@ -48,5 +65,28 @@ scale = Vector2(5, 5)
 texture_normal = ExtResource("6_nf1pj")
 texture_hover = ExtResource("7_poh1w")
 
+[node name="play_button" type="TextureButton" parent="."]
+offset_left = 381.0
+offset_top = 325.0
+offset_right = 765.0
+offset_bottom = 437.0
+texture_normal = ExtResource("8_3kdmp")
+texture_pressed = ExtResource("9_sgpdh")
+texture_hover = ExtResource("10_sdqu5")
+
+[node name="Label" type="Label" parent="play_button"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 40.0
+offset_right = 257.0
+offset_bottom = 76.0
+text = "PLAY"
+label_settings = SubResource("LabelSettings_ym1i6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_a67js")
+autoplay = true
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]

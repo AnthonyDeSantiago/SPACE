@@ -366,6 +366,7 @@ script = ExtResource("18_64oxe")
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="player_regen" from="simple_char" to="." method="_on_simple_char_player_regen"]
 [connection signal="player_was_hurt" from="simple_char" to="." method="_on_simple_char_player_was_hurt"]
 [connection signal="pressed" from="Game_Over_Screen/VBoxContainer/Play_Again_Button" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="Game_Over_Screen/VBoxContainer/Main_Menu_Button" to="." method="_on_main_menu_button_pressed"]
