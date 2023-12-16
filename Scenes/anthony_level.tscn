@@ -223,6 +223,23 @@ offset_bottom = 67.0
 text = "Play Again"
 label_settings = SubResource("LabelSettings_mfno5")
 
+[node name="Main_Menu_Button" type="TextureButton" parent="Game_Over_Screen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("11_qmhb5")
+texture_pressed = ExtResource("12_ucsna")
+texture_hover = ExtResource("12_oei43")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Game_Over_Screen/VBoxContainer/Main_Menu_Button"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 35.0
+offset_right = 451.0
+offset_bottom = 67.0
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_mfno5")
+
 [node name="Spawner2" parent="." instance=ExtResource("2_bqv8q")]
 position = Vector2(1103, 59)
 
@@ -230,3 +247,4 @@ position = Vector2(1103, 59)
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="player_was_hurt" from="simple_char" to="." method="_on_simple_char_player_was_hurt"]
 [connection signal="pressed" from="Game_Over_Screen/VBoxContainer/Play_Again_Button" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="Game_Over_Screen/VBoxContainer/Main_Menu_Button" to="." method="_on_main_menu_button_pressed"]

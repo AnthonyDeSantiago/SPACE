@@ -25,10 +25,13 @@ func _on_simple_char_player_was_hurt(damage):
 		get_tree().paused = true
 
 
-
-
-
 func _on_play_again_button_pressed():
 	print("Play again pressed")
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/anthony_level.tscn")
+
+
+func _on_main_menu_button_pressed():
+	print("Main Menu pressed")
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/Main_Menu.tscn")
