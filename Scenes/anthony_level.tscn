@@ -1,10 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://dhb4mqu6oa5sw"]
+[gd_scene load_steps=29 format=3 uid="uid://dhb4mqu6oa5sw"]
 
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_ed44a"]
 [ext_resource type="PackedScene" uid="uid://cqd3dppvs4hd2" path="res://Scenes/spawner.tscn" id="2_bqv8q"]
 [ext_resource type="Texture2D" uid="uid://clo5hwm2nqulo" path="res://Art/simple_tile_set.png" id="2_hdnbv"]
 [ext_resource type="Texture2D" uid="uid://do47aeewpxqg3" path="res://Art/Another_Tile_Set.png" id="3_6qmvo"]
-[ext_resource type="PackedScene" uid="uid://d0gv824dlh8tl" path="res://Scenes/simple_char.tscn" id="3_t6bh1"]
+[ext_resource type="PackedScene" uid="uid://djqldkhfm7mwj" path="res://Scenes/simple_char.tscn" id="3_t6bh1"]
 [ext_resource type="Texture2D" uid="uid://ckropvpiic5he" path="res://Art/UI_Art/Simple_Heart.png" id="6_8xejw"]
 [ext_resource type="Texture2D" uid="uid://dbk5c8gnux1su" path="res://Art/UI_Art/Health_Bar_White.png" id="7_282rs"]
 [ext_resource type="Texture2D" uid="uid://c4sqtoid3sqpy" path="res://Art/UI_Art/Health_Bar_Fill.png" id="7_oq3cs"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://Scripts/Flickering_Light.gd" id="15_lf102"]
 [ext_resource type="Texture2D" uid="uid://qj2mk4qk4own" path="res://Art/Light_Rotate.png" id="16_enild"]
 [ext_resource type="Script" path="res://Scripts/Alarm_Rotating.gd" id="17_fsl64"]
+[ext_resource type="Script" path="res://Scenes/Typed_Text.gd" id="18_64oxe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1sbgy"]
 texture = ExtResource("2_hdnbv")
@@ -129,6 +130,10 @@ font = ExtResource("10_7o4x7")
 font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_mfno5"]
+font = ExtResource("10_7o4x7")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_pp3t0"]
 font = ExtResource("10_7o4x7")
 font_size = 32
 
@@ -343,6 +348,21 @@ texture = ExtResource("16_enild")
 texture_scale = 5.0
 script = ExtResource("17_fsl64")
 rotation_speed = 460
+
+[node name="Start_Fade_Away" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Start_Fade_Away"]
+offset_left = 265.0
+offset_top = 139.0
+offset_right = 976.0
+offset_bottom = 241.0
+
+[node name="Label" type="Label" parent="Start_Fade_Away/VBoxContainer"]
+layout_mode = 2
+text = "Do not go gentle into that good night..."
+label_settings = SubResource("LabelSettings_pp3t0")
+autowrap_mode = 3
+script = ExtResource("18_64oxe")
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

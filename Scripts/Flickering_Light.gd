@@ -14,9 +14,7 @@ func _process(delta):
 		if (energy > 3):
 			energy = 1
 			timer = countdown
-			print("dim")
 		else:
 			energy = 4
 			timer = countdown
-			print("brighten")
 	
