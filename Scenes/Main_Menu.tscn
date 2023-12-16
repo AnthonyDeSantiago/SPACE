@@ -1,44 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbhunhfv2fpyo"]
+[gd_scene load_steps=4 format=3 uid="uid://bbhunhfv2fpyo"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Menu.gd" id="1_fmp0a"]
 [ext_resource type="Texture2D" uid="uid://dqycb0wqwnj4e" path="res://Art/playbutton.png" id="2_jop0n"]
+[ext_resource type="Texture2D" uid="uid://duunxjgyugwfu" path="res://Art/logo.png" id="3_l7l26"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_fmp0a")
 
 [node name="Play_Button" type="Button" parent="."]
-offset_left = 491.0
-offset_top = 191.0
-offset_right = 675.0
-offset_bottom = 251.0
+offset_left = 493.0
+offset_top = 453.0
+offset_right = 677.0
+offset_bottom = 513.0
 icon = ExtResource("2_jop0n")
 icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Quit_Button" type="Button" parent="."]
-offset_left = 491.0
-offset_top = 262.0
-offset_right = 675.0
-offset_bottom = 322.0
+offset_left = 493.0
+offset_top = 517.0
+offset_right = 677.0
+offset_bottom = 577.0
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
 [node name="HighScore_Button" type="Button" parent="."]
 offset_left = 491.0
-offset_top = 333.0
+offset_top = 580.0
 offset_right = 675.0
-offset_bottom = 393.0
+offset_bottom = 640.0
 text = "High Score"
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 509.0
-offset_top = 121.0
-offset_right = 536.0
-offset_bottom = 133.0
+offset_left = 515.0
+offset_top = 382.0
+offset_right = 544.0
+offset_bottom = 394.0
 scale = Vector2(5, 5)
 texture_normal = ExtResource("2_jop0n")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(571, 177)
+scale = Vector2(8.90789, 8.90789)
+texture = ExtResource("3_l7l26")
 
 [connection signal="pressed" from="Play_Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Quit_Button" to="." method="_on_quit_button_pressed"]
