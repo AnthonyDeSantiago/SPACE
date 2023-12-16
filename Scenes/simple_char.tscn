@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/simple_char.gd" id="1_u21o5"]
 [ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="1_umd6g"]
 [ext_resource type="Texture2D" uid="uid://csgdpmf6cujc0" path="res://Art/Flash_Light.png" id="4_3sp3q"]
-[ext_resource type="Texture2D" uid="uid://emynobwnbptj" path="res://Art/light_source.png" id="4_jq218"]
+[ext_resource type="Texture2D" uid="uid://ccwobq38bksje" path="res://Art/playerlightsource.png" id="4_jyfp6"]
 [ext_resource type="Texture2D" uid="uid://y47jj3vnqexd" path="res://Art/player_walk-Sheet.png" id="6_8pqti"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l38oc"]
@@ -132,15 +132,15 @@ sprite_frames = SubResource("SpriteFrames_515qh")
 animation = &"run"
 
 [node name="PointLight2D2" type="PointLight2D" parent="Marker2D/AnimatedSprite2D"]
-position = Vector2(0.60759, 0.405063)
-scale = Vector2(0.316119, 0.339191)
+position = Vector2(-3.00001, -0.333333)
+scale = Vector2(0.372063, 0.399218)
 energy = 5.0
 shadow_enabled = true
-texture = ExtResource("4_jq218")
+texture = ExtResource("4_jyfp6")
 
 [node name="PointLight2D" type="PointLight2D" parent="Marker2D/AnimatedSprite2D"]
-position = Vector2(70.076, 0)
-scale = Vector2(0.337641, 0.586076)
+position = Vector2(80, 0.333333)
+scale = Vector2(0.402863, 0.699288)
 energy = 5.0
 shadow_enabled = true
 texture = ExtResource("4_3sp3q")
