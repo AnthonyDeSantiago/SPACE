@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bps40s36ap7t8"]
+[gd_scene load_steps=5 format=3 uid="uid://c8nomp02lpkxb"]
 
 [ext_resource type="Script" path="res://Scripts/simple_proj.gd" id="1_fwkot"]
 [ext_resource type="Texture2D" uid="uid://com76tfebn12l" path="res://Art/simple_proj.png" id="2_21tm7"]
@@ -26,9 +26,5 @@ shape = SubResource("CapsuleShape2D_nq0m7")
 position = Vector2(1.52588e-05, 2.38419e-07)
 scale = Vector2(1.00195, 1.00195)
 texture = ExtResource("3_p6rfw")
-texture_scale = 2.0
-
-[node name="queue_free_timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="queue_free_timer" to="." method="_on_queue_free_timer_timeout"]
