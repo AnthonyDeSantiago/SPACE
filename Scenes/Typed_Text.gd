@@ -17,4 +17,4 @@ func _process(delta):
 			visible_characters += 1
 			timer = 0
 		else:
-			label_settings.font_color.a -= .01
+			label_settings.font_color.a -= .0065

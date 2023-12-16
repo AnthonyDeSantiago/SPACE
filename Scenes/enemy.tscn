@@ -108,6 +108,7 @@ size = Vector2(16.8, 25.2)
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_nfr5l")
+speed = 250
 
 [node name="Component_Health" parent="." instance=ExtResource("2_35e7y")]
 position = Vector2(304.916, 217.111)

@@ -132,17 +132,17 @@ sprite_frames = SubResource("SpriteFrames_515qh")
 animation = &"run"
 
 [node name="PointLight2D2" type="PointLight2D" parent="Marker2D/AnimatedSprite2D"]
-position = Vector2(0.60759, 0.405063)
-scale = Vector2(0.316119, 0.339191)
-energy = 5.0
+position = Vector2(-5, 9.53674e-07)
+color = Color(0.478431, 0.478431, 0.478431, 1)
+energy = 2.5
 shadow_enabled = true
 texture = ExtResource("4_jq218")
 
 [node name="PointLight2D" type="PointLight2D" parent="Marker2D/AnimatedSprite2D"]
-position = Vector2(70.076, 0)
-scale = Vector2(0.337641, 0.586076)
+position = Vector2(170.667, -0.333333)
 energy = 5.0
 shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
 texture = ExtResource("4_3sp3q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
