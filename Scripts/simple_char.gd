@@ -19,7 +19,10 @@ signal player_regen()
 func _physics_process(delta):
 	if broken_gen != null:
 		$Marker_Gen.look_at(broken_gen.position)
-		$Marker_Gen/BigOlArrow.visible = true
+		if position.distance_to(broken_gen.position) >= 400:
+			$Marker_Gen/BigOlArrow.visible = true
+		else:
+			$Marker_Gen/BigOlArrow.visible = false
 	else:
 		$Marker_Gen/BigOlArrow.visible = false
 	#anim.play("run")
