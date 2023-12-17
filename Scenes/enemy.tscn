@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_nfr5l"]
 [ext_resource type="PackedScene" uid="uid://b3nhpogcj2g6v" path="res://Scenes/component_health.tscn" id="2_35e7y"]
 [ext_resource type="Texture2D" uid="uid://cvlxryj3nj4ge" path="res://Art/lil_guy-Sheet.png" id="2_bhyxa"]
-[ext_resource type="PackedScene" uid="uid://djcjnmvb4b3na" path="res://Scenes/component_enemy_rotation.tscn" id="2_rbi5n"]
+[ext_resource type="PackedScene" path="res://Scenes/component_enemy_rotation.tscn" id="2_rbi5n"]
 [ext_resource type="Texture2D" uid="uid://cfroxsiif47tl" path="res://Art/lil_guy-Death-Sheet.png" id="3_71mjq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_870c4"]
@@ -127,3 +127,5 @@ position = Vector2(1, 1)
 rotation = 1.5708
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_t2gg4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

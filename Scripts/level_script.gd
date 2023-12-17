@@ -29,10 +29,14 @@ func _ready():
 		if child is generator:
 			child.connect("generator_has_been_fixed", _on_generator_fixed)
 		generator_array.append(child)
+		
 
 func _on_child_entered_tree(node):
 	if node is enemy:
 		node.enemy_set_target($simple_char)
+		
+	if node is Red_Projectile:
+		node.connect("player_regen", _on_simple_char_player_regen)
 
 
 func _on_child_exiting_tree(node):
@@ -69,7 +73,7 @@ func _on_spawn_timer_timeout():
 
 
 func _on_simple_char_player_regen():
-	health_bar.value += 25
+	health_bar.value += 20
 
 
 func _on_generator_timer_timeout():

@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dghessuscq8fr" path="res://Art/UI_Art/Health_Bar_Boundaryl.png" id="7_w6wkt"]
 [ext_resource type="FontFile" uid="uid://bkq320xoojj7b" path="res://Art/UI_Art/CONCHARS.png" id="10_7o4x7"]
 [ext_resource type="Texture2D" uid="uid://dqo7r6by1na8r" path="res://Art/UI_Art/empty_button.png" id="11_qmhb5"]
+[ext_resource type="Texture2D" uid="uid://qrvykycajfr7" path="res://Art/pie-Sheet.png" id="12_lbhwv"]
 [ext_resource type="Texture2D" uid="uid://b8h2f21dxflnx" path="res://Art/UI_Art/empty_button_hover.png" id="12_oei43"]
 [ext_resource type="Texture2D" uid="uid://bm1wpagblab75" path="res://Art/UI_Art/empty_button_pressed.png" id="12_ucsna"]
 [ext_resource type="Texture2D" uid="uid://emynobwnbptj" path="res://Art/light_source.png" id="14_tpj8r"]
@@ -122,6 +123,70 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation_group"
 agent_radius = 14.63
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_63xhm"]
+atlas = ExtResource("12_lbhwv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibkgf"]
+atlas = ExtResource("12_lbhwv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ccj"]
+atlas = ExtResource("12_lbhwv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlkeo"]
+atlas = ExtResource("12_lbhwv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wokds"]
+atlas = ExtResource("12_lbhwv")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tylha"]
+atlas = ExtResource("12_lbhwv")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk0mo"]
+atlas = ExtResource("12_lbhwv")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ttya"]
+atlas = ExtResource("12_lbhwv")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvgf0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63xhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibkgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ccj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlkeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wokds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tylha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk0mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ttya")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_jsiyq"]
 font = ExtResource("10_7o4x7")
 font_size = 32
@@ -196,7 +261,7 @@ transform = Transform2D(1, 0, 0, 1, 10, 10)
 [node name="HUD" type="GridContainer" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
-columns = 2
+columns = 3
 
 [node name="Heart Icon" type="TextureRect" parent="CanvasLayer/HUD"]
 layout_mode = 2
@@ -208,6 +273,11 @@ value = 100.0
 texture_under = ExtResource("7_282rs")
 texture_over = ExtResource("7_w6wkt")
 texture_progress = ExtResource("7_oq3cs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HUD"]
+position = Vector2(281, 16)
+scale = Vector2(1.8125, 1.8125)
+sprite_frames = SubResource("SpriteFrames_lvgf0")
 
 [node name="Score" type="GridContainer" parent="CanvasLayer"]
 offset_left = 481.0

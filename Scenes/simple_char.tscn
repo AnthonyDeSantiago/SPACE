@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ccwobq38bksje" path="res://Art/playerlightsource.png" id="4_jyfp6"]
 [ext_resource type="Texture2D" uid="uid://y47jj3vnqexd" path="res://Art/player_walk-Sheet.png" id="6_8pqti"]
 [ext_resource type="AudioStream" uid="uid://bvaf7d7a66k56" path="res://Audio/gunfired.wav" id="6_toj3w"]
+[ext_resource type="AudioStream" uid="uid://b04bt7nat3ur" path="res://Audio/bigfired.wav" id="7_nckg5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l38oc"]
 radius = 14.75
@@ -158,12 +159,13 @@ unique_name_in_owner = true
 stream = ExtResource("6_toj3w")
 volume_db = -10.0
 
-[node name="Area_Interact" type="Area2D" parent="."]
+[node name="BigFired" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_nckg5")
+volume_db = -7.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Interact"]
-shape = SubResource("CircleShape2D_iytqx")
+[node name="AltFire" type="Timer" parent="."]
+wait_time = 8.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_invulnerability_timeout"]
-[connection signal="body_entered" from="Area_Interact" to="." method="_on_area_interact_body_entered"]
-[connection signal="body_exited" from="Area_Interact" to="." method="_on_area_interact_body_exited"]
+[connection signal="timeout" from="AltFire" to="." method="_on_alt_fire_timeout"]
