@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cylpk7lxyiw8w"
+path="res://.godot/imported/GUNMech_Insert Clip_04.wav-8828a8dff82dc83f207ea6dfa5da5d25.sample"
+
+[deps]
+
+source_file="res://Audio/GUNMech_Insert Clip_04.wav"
+dest_files=["res://.godot/imported/GUNMech_Insert Clip_04.wav-8828a8dff82dc83f207ea6dfa5da5d25.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

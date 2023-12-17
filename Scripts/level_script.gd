@@ -104,6 +104,7 @@ func _on_generator_timer_timeout():
 	$simple_char.broken_gen = gen
 
 func _on_generator_fixed():
+	$simple_char/Generator.play()
 	generator_timer.start()
 	temp_dec_timer.stop()
 	temp_bar.value = 100

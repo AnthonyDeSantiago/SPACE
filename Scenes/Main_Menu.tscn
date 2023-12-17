@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbhunhfv2fpyo"]
+[gd_scene load_steps=12 format=3 uid="uid://bbhunhfv2fpyo"]
 
 [ext_resource type="Script" path="res://Scripts/Main_Menu.gd" id="1_fmp0a"]
 [ext_resource type="Texture2D" uid="uid://big5ejr2ib2ef" path="res://Art/logofixed.png" id="4_fqatt"]
@@ -13,6 +13,10 @@
 font = ExtResource("11_va21s")
 font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_67x4b"]
+font = ExtResource("11_va21s")
+font_size = 32
+
 [sub_resource type="LabelSettings" id="LabelSettings_6lfmn"]
 font = ExtResource("11_va21s")
 font_size = 32
@@ -20,13 +24,21 @@ font_size = 32
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_fmp0a")
 
-[node name="Label" type="Label" parent="."]
+[node name="HighscoreText" type="Label" parent="."]
 offset_left = 2.0
 offset_top = 611.0
 offset_right = 322.0
 offset_bottom = 647.0
 text = "HIGHSCORE:"
 label_settings = SubResource("LabelSettings_ym1i6")
+
+[node name="HighscoreNumber" type="Label" parent="."]
+offset_left = 324.0
+offset_top = 611.0
+offset_right = 364.0
+offset_bottom = 643.0
+text = "0"
+label_settings = SubResource("LabelSettings_67x4b")
 
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(570, 177)
