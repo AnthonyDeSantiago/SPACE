@@ -14,6 +14,7 @@ extends Node2D
 @onready var spawner_array := []
 @onready var generator_array := []
 @onready var generator_timer: Timer = $Generator_Timer
+@onready var anim = $CanvasLayer/HUD/AnimatedSprite2D
 
 
 func _ready():
@@ -29,6 +30,7 @@ func _ready():
 		if child is generator:
 			child.connect("generator_has_been_fixed", _on_generator_fixed)
 		generator_array.append(child)
+		
 		
 
 func _on_child_entered_tree(node):
@@ -74,6 +76,18 @@ func _on_spawn_timer_timeout():
 
 func _on_simple_char_player_regen():
 	health_bar.value += 20
+	
+
+func _on_simple_char_player_cooldown():
+	$CanvasLayer/HUD/AnimatedSprite2D.visible(true)
+	anim.play("default")
+	
+
+
+func _on_simple_char_player_cooldown_over():
+	anim.stop()
+	$CanvasLayer/HUD/AnimatedSprite2D.visible(false)
+	
 
 
 func _on_generator_timer_timeout():

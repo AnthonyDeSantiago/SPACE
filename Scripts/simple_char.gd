@@ -17,6 +17,10 @@ signal player_was_hurt(damage)
 
 signal player_regen()
 
+signal player_cooldown()
+
+signal player_cooldown_over()
+
 var shot_ready = true
 
 func _physics_process(delta):
@@ -53,6 +57,7 @@ func _input(event):
 	if event.is_action_pressed("rightclick"):
 		#player_regen.emit()
 		if shot_ready == true:
+			player_cooldown.emit()
 			$BigFired.play()
 			var new_projectile: CharacterBody2D = projectile_scene2.instantiate()
 			
@@ -92,3 +97,4 @@ func _on_area_interact_body_exited(body):
 
 func _on_alt_fire_timeout():
 	shot_ready = true
+	player_cooldown_over.emit()
