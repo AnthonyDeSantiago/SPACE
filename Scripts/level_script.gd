@@ -118,6 +118,8 @@ func _on_generator_fixed():
 func _on_temp_decrement_timer_timeout():
 	temp_bar.value -= temp_dec
 	if temp_bar.value <= 0:
+		if score_number > Global.highscore:
+			Global.highscore = score_number
 		game_over_screen.visible = true
 		get_tree().paused = true
 		$Big_Arrow_Canvas.visible = false
