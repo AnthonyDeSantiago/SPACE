@@ -40,6 +40,7 @@ func _physics_process(delta):
 	  
 func _input(event):
 	if event.is_action_pressed("click"):
+		$GunFired.play()
 		var new_projectile: CharacterBody2D = projectile_scene.instantiate()
 		
 		print(new_projectile.position)
