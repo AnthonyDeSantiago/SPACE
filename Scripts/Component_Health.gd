@@ -5,13 +5,11 @@ extends Node2D
 	#var timer = timer()
 	
 func take_damage(damage:float):
-	#$Timer.start()
-	#$EnemyHit.play()
-	#anim.play("death")
-	#get_parent().anim.play("death")
+	$Timer.start()
+	$EnemyHit.play()
+	anim.play("death")
+	
+
+
+func _on_timer_timeout():
 	get_parent().queue_free()
-	
-
-
-#func _on_timer_timeout():
-	

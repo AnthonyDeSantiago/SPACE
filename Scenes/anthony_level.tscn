@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dhb4mqu6oa5sw"]
+[gd_scene load_steps=31 format=3 uid="uid://dhb4mqu6oa5sw"]
 
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_ed44a"]
 [ext_resource type="PackedScene" uid="uid://cqd3dppvs4hd2" path="res://Scenes/spawner.tscn" id="2_bqv8q"]
