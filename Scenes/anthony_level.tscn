@@ -487,10 +487,10 @@ position = Vector2(165, 602)
 
 [node name="Generator_Timer" type="Timer" parent="."]
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="Big_Arrow_Canvas" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="BigOlArrow" type="Sprite2D" parent="CanvasLayer2"]
+[node name="BigOlArrow" type="Sprite2D" parent="Big_Arrow_Canvas"]
 visible = false
 texture = ExtResource("22_84b5l")
 script = ExtResource("23_wsdla")

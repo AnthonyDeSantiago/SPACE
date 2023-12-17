@@ -51,7 +51,7 @@ func _on_simple_char_player_was_hurt(damage):
 	if health_bar.value <= 0:
 		game_over_screen.visible = true
 		get_tree().paused = true
-
+		$Big_Arrow_Canvas.visible = false
 
 func _on_play_again_button_pressed():
 	get_tree().paused = false
