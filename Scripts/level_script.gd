@@ -73,8 +73,8 @@ func _on_main_menu_button_pressed():
 
 
 func _on_spawn_timer_timeout():
+	spawner_array.pick_random().spawn(enemy_speed)
 	if enemy_speed < enemy_speed_cap:
-		spawner_array.pick_random().spawn(enemy_speed)
 		enemy_speed += 5
 	if $Spawn_Timer.wait_time >= .5:
 		$Spawn_Timer.wait_time = $Spawn_Timer.wait_time * spawn_accel
