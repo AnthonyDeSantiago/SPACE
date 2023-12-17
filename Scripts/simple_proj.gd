@@ -15,6 +15,7 @@ func _on_area_2d_body_entered(body):
 	if body.has_node("Component_Health"):
 		var component_health = body.get_node("Component_Health")
 		print("Hit with component_health")
+		$EnemyHit.play()
 		component_health.take_damage(damage)
 		queue_free()
 	queue_free()

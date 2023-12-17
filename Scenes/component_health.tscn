@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3nhpogcj2g6v"]
+[gd_scene load_steps=3 format=3 uid="uid://b3nhpogcj2g6v"]
 
 [ext_resource type="Script" path="res://Scripts/Component_Health.gd" id="1_a1aum"]
+[ext_resource type="AudioStream" uid="uid://cvptkhp8du71r" path="res://Audio/enemyhit.wav" id="2_cqsco"]
 
 [node name="Component_Health" type="Node2D"]
 script = ExtResource("1_a1aum")
+health = null
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+
+[node name="EnemyHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_cqsco")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
