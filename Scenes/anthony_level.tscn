@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://Scripts/Alarm_Rotating.gd" id="17_fsl64"]
 [ext_resource type="Script" path="res://Scenes/Typed_Text.gd" id="18_64oxe"]
 [ext_resource type="AudioStream" uid="uid://bb18aksg68i2y" path="res://Audio/Race to Mars.mp3" id="19_huv8p"]
+[ext_resource type="PackedScene" uid="uid://dq8fpb4j710kx" path="res://Scenes/generator.tscn" id="20_xus0c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1sbgy"]
 texture = ExtResource("2_hdnbv")
@@ -141,6 +142,7 @@ font_size = 32
 
 [node name="Anthony_Level" type="Node2D"]
 script = ExtResource("1_ed44a")
+gen_breakdown_time = 5
 
 [node name="Floor" type="TileMap" parent="."]
 position = Vector2(1, 0)
@@ -375,6 +377,26 @@ label_settings = SubResource("LabelSettings_pp3t0")
 autowrap_mode = 3
 script = ExtResource("18_64oxe")
 
+[node name="Generator" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
+position = Vector2(-956, 1095)
+
+[node name="Generator2" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
+position = Vector2(-585, 1988)
+
+[node name="Generator3" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
+position = Vector2(2084, 1166)
+
+[node name="Generator4" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
+position = Vector2(1833, 1939)
+
+[node name="Generator5" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
+position = Vector2(1044, 133)
+
+[node name="Generator6" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
+position = Vector2(165, 602)
+
+[node name="Generator_Timer" type="Timer" parent="."]
+
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="player_regen" from="simple_char" to="." method="_on_simple_char_player_regen"]
@@ -382,3 +404,4 @@ script = ExtResource("18_64oxe")
 [connection signal="pressed" from="Game_Over_Screen/VBoxContainer/Play_Again_Button" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="Game_Over_Screen/VBoxContainer/Main_Menu_Button" to="." method="_on_main_menu_button_pressed"]
 [connection signal="timeout" from="Spawn_Timer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Generator_Timer" to="." method="_on_generator_timer_timeout"]

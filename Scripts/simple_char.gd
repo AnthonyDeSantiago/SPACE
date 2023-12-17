@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var area: Area2D = $Area2D
 @onready var timer_invulnerability: Timer = $Timer
 @onready var is_invulnerable = false
+@onready var interactable: generator
 
 signal player_was_hurt(damage)
 
@@ -48,6 +49,9 @@ func _input(event):
 		
 	if event.is_action_pressed("rightclick"):
 		player_regen.emit()
+	
+	if event.is_action_pressed("Interact") and interactable != null:
+		interactable.fix_generator()
 
 
 func _on_area_2d_body_entered(body):
@@ -60,3 +64,15 @@ func _on_area_2d_body_entered(body):
 
 func _on_invulnerability_timeout():
 	area.set_deferred("monitoring", true)
+
+
+func _on_area_interact_body_entered(body):
+	if body.get_parent() is generator:
+		print("Within distance of a generator")
+		interactable = body.get_parent()
+
+
+func _on_area_interact_body_exited(body):
+	if body.get_parent() is generator:
+		print("No longer within distance of generator")
+		interactable = null
