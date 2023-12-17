@@ -2,6 +2,13 @@ extends Node2D
 
 #hello
 
+@onready var score_text_number: Label = $HighscoreNumber
+@onready var highscore = Global.highscore
+
+func _ready():
+	score_text_number.text = str(highscore)
+	
+
 
 func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/anthony_level.tscn")
