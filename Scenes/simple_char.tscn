@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d0gv824dlh8tl"]
+[gd_scene load_steps=23 format=3 uid="uid://d0gv824dlh8tl"]
 
 [ext_resource type="Script" path="res://Scripts/simple_char.gd" id="1_u21o5"]
 [ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="1_umd6g"]
@@ -104,8 +104,8 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iytqx"]
-radius = 93.0591
+[sub_resource type="CircleShape2D" id="CircleShape2D_lb3r1"]
+radius = 123.199
 
 [node name="simple_char" type="CharacterBody2D"]
 collision_layer = 2
@@ -166,6 +166,13 @@ volume_db = -7.0
 [node name="AltFire" type="Timer" parent="."]
 wait_time = 8.0
 
+[node name="Area_Interact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Interact"]
+shape = SubResource("CircleShape2D_lb3r1")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_invulnerability_timeout"]
 [connection signal="timeout" from="AltFire" to="." method="_on_alt_fire_timeout"]
+[connection signal="body_entered" from="Area_Interact" to="." method="_on_area_interact_body_entered"]
+[connection signal="body_exited" from="Area_Interact" to="." method="_on_area_interact_body_exited"]
