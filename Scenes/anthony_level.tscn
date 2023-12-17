@@ -469,22 +469,22 @@ autowrap_mode = 3
 script = ExtResource("18_64oxe")
 
 [node name="Generator" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
-position = Vector2(-956, 1095)
+position = Vector2(-923, 1027)
 
 [node name="Generator2" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
-position = Vector2(-585, 1988)
+position = Vector2(-592, 2061)
 
 [node name="Generator3" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
-position = Vector2(2084, 1166)
+position = Vector2(2100, 1026)
 
 [node name="Generator4" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
-position = Vector2(1833, 1939)
+position = Vector2(1792, 2047)
 
 [node name="Generator5" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
-position = Vector2(1044, 133)
+position = Vector2(1069, 59)
 
 [node name="Generator6" parent="." groups=["generator_group"] instance=ExtResource("20_xus0c")]
-position = Vector2(165, 602)
+position = Vector2(144, 714)
 
 [node name="Generator_Timer" type="Timer" parent="."]
 
