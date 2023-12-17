@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://djqldkhfm7mwj"]
+[gd_scene load_steps=20 format=3 uid="uid://d0gv824dlh8tl"]
 
 [ext_resource type="Script" path="res://Scripts/simple_char.gd" id="1_u21o5"]
 [ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="1_umd6g"]
@@ -139,7 +139,7 @@ shadow_enabled = true
 texture = ExtResource("4_jyfp6")
 
 [node name="PointLight2D" type="PointLight2D" parent="Marker2D/AnimatedSprite2D"]
-position = Vector2(80, 0.333333)
+position = Vector2(80, 0)
 scale = Vector2(0.402863, 0.699288)
 energy = 5.0
 shadow_enabled = true

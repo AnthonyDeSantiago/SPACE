@@ -31,6 +31,7 @@ func _on_child_exiting_tree(node):
 
 func _on_simple_char_player_was_hurt(damage):
 	health_bar.value -= damage
+	$simple_char/PlayerHit.play()
 	if health_bar.value <= 0:
 		game_over_screen.visible = true
 		get_tree().paused = true
