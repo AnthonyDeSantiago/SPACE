@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://djqldkhfm7mwj"]
+[gd_scene load_steps=23 format=3 uid="uid://djqldkhfm7mwj"]
 
 [ext_resource type="Script" path="res://Scripts/simple_char.gd" id="1_u21o5"]
 [ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="1_umd6g"]
@@ -104,8 +104,8 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bep6s"]
-radius = 118.152
+[sub_resource type="CircleShape2D" id="CircleShape2D_yrmdd"]
+radius = 128.265
 
 [node name="simple_char" type="CharacterBody2D"]
 collision_layer = 2
