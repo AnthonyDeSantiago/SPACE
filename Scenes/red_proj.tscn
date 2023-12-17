@@ -10,7 +10,7 @@ height = 38.0
 
 [node name="Simple_Projectile" type="CharacterBody2D"]
 script = ExtResource("1_52ln7")
-SPEED = 300.0
+SPEED = 1000.0
 
 [node name="SimpleProj" type="Sprite2D" parent="."]
 position = Vector2(1.90735e-06, 1.90735e-06)
