@@ -105,6 +105,8 @@ func _on_generator_timer_timeout():
 
 func _on_generator_fixed():
 	$simple_char/Generator.play()
+	score_number += 20
+	score_text_number.text = str(score_number)
 	generator_timer.start()
 	temp_dec_timer.stop()
 	temp_bar.value = 100
