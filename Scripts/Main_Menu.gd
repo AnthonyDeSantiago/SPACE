@@ -3,10 +3,10 @@ extends Node2D
 #hello
 
 @onready var score_text_number: Label = $HighscoreNumber
-@onready var highscore = Global.highscore
+#@onready var highscore = Global.highscore
 
 func _ready():
-	score_text_number.text = str(highscore)
+	score_text_number.text = str(Global.highscore)
 	
 
 

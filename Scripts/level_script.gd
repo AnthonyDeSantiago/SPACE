@@ -54,6 +54,8 @@ func _on_simple_char_player_was_hurt(damage):
 	health_bar.value -= damage
 	$simple_char/PlayerHit.play()
 	if health_bar.value <= 0:
+		if score_number > Global.highscore:
+			Global.highscore = score_number
 		game_over_screen.visible = true
 		get_tree().paused = true
 		$Big_Arrow_Canvas.visible = false
