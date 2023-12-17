@@ -4,6 +4,7 @@ extends Node2D
 @export var enemy_speed = 250
 @export var spawn_start_freq = 5
 @export var spawn_accel = .95
+@export var temp_dec = 10
 
 @export var gen_breakdown_time = 30
 
@@ -15,6 +16,8 @@ extends Node2D
 @onready var generator_array := []
 @onready var generator_timer: Timer = $Generator_Timer
 @onready var anim = $CanvasLayer/HUD/AnimatedSprite2D
+@onready var temp_bar = $CanvasLayer/Temperature/TextureProgressBar
+@onready var temp_dec_timer = $Temp_Decrement_Timer
 
 
 func _ready():
@@ -95,12 +98,21 @@ func _on_simple_char_player_cooldown_over():
 func _on_generator_timer_timeout():
 	print("break generator")
 	generator_timer.stop()
+	temp_dec_timer.start()
 	var gen: generator = generator_array.pick_random()
 	gen.break_generator()
 	$simple_char.broken_gen = gen
 
 func _on_generator_fixed():
-	print("On Generator fixed called")
 	generator_timer.start()
+	temp_dec_timer.stop()
+	temp_bar.value = 100
 	$simple_char.broken_gen = null
-	
+
+
+func _on_temp_decrement_timer_timeout():
+	temp_bar.value -= temp_dec
+	if temp_bar.value <= 0:
+		game_over_screen.visible = true
+		get_tree().paused = true
+		$Big_Arrow_Canvas.visible = false
