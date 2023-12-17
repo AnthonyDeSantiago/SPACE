@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/generator.gd" id="1_fd88q"]
 [ext_resource type="FontFile" uid="uid://bkq320xoojj7b" path="res://Art/UI_Art/CONCHARS.png" id="1_jenpj"]
 [ext_resource type="Script" path="res://Scripts/Bob_Up_Down.gd" id="2_he14y"]
-[ext_resource type="Texture2D" uid="uid://l8yfle4l60go" path="res://Art/icon.svg" id="2_qfbru"]
+[ext_resource type="Texture2D" uid="uid://bknbysdi66kyg" path="res://Art/UI_Art/Generator.png" id="4_okapv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucue6"]
-size = Vector2(125, 122)
+size = Vector2(138, 98)
 
 [sub_resource type="LabelSettings" id="LabelSettings_sujlg"]
 line_spacing = 10.0
@@ -14,7 +14,7 @@ font = ExtResource("1_jenpj")
 font_size = 32
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2xqp"]
-size = Vector2(123, 125)
+size = Vector2(138, 99)
 
 [node name="Generator" type="Node2D"]
 script = ExtResource("1_fd88q")
@@ -22,11 +22,8 @@ script = ExtResource("1_fd88q")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0.5, 0)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ucue6")
-
-[node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_qfbru")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -111.0
@@ -45,7 +42,11 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 0.5)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_w2xqp")
+
+[node name="Generator" type="Sprite2D" parent="."]
+scale = Vector2(2.889, 3)
+texture = ExtResource("4_okapv")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
