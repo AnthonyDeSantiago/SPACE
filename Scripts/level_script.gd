@@ -2,9 +2,11 @@ extends Node2D
 
 @export var enemy_kill_value = 10
 @export var enemy_speed = 250
+@export var enemy_speed_cap = 475
 @export var spawn_start_freq = 5
 @export var spawn_accel = .95
 @export var temp_dec = 10
+
 
 @export var gen_breakdown_time = 30
 
@@ -71,7 +73,7 @@ func _on_main_menu_button_pressed():
 
 
 func _on_spawn_timer_timeout():
-	if enemy_speed < 1000:
+	if enemy_speed < enemy_speed_cap:
 		spawner_array.pick_random().spawn(enemy_speed)
 		enemy_speed += 5
 	if $Spawn_Timer.wait_time >= .5:
