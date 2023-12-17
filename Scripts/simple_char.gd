@@ -55,7 +55,6 @@ func _input(event):
 		get_parent().add_child(new_projectile)
 		
 	if event.is_action_pressed("rightclick"):
-		#player_regen.emit()
 		if shot_ready == true:
 			player_cooldown.emit()
 			$BigFired.play()

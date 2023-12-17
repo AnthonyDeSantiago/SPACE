@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var enemy_kill_value = 5
+@export var enemy_kill_value = 10
 @export var enemy_speed = 250
 @export var spawn_start_freq = 5
 @export var spawn_accel = .95
@@ -76,6 +76,8 @@ func _on_spawn_timer_timeout():
 
 func _on_simple_char_player_regen():
 	health_bar.value += 20
+	score_number += 15
+	
 	
 
 func _on_simple_char_player_cooldown():
@@ -101,3 +103,4 @@ func _on_generator_fixed():
 	print("On Generator fixed called")
 	generator_timer.start()
 	$simple_char.broken_gen = null
+	
