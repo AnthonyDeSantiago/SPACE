@@ -67,7 +67,6 @@ func _on_invulnerability_timeout():
 
 
 func _on_area_interact_body_entered(body):
-	print("Body Entered")
 	if body.get_parent() is generator:
 		print("Within distance of a generator")
 		interactable = body.get_parent()
