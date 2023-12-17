@@ -10,13 +10,21 @@ extends CharacterBody2D
 @onready var timer_invulnerability: Timer = $Timer
 @onready var is_invulnerable = false
 @onready var interactable: generator
+@onready var gen_pointer: Marker2D = $Marker_Pointer
+@onready var big_ol_arrow = $Marker_Pointer/BigOlArrow
 
 signal player_was_hurt(damage)
 
 signal player_regen()
 
 func _physics_process(delta):
-	
+	if interactable != null:
+		big_ol_arrow.visible = true
+		gen_pointer.look_at(interactable.position)
+		interactable.position
+	else:
+		big_ol_arrow.visible = false
+		
 	#anim.play("run")
 	var vertical = Input.get_axis("up", "down")
 	var horizontal = Input.get_axis("left", "right")
@@ -67,7 +75,6 @@ func _on_invulnerability_timeout():
 
 
 func _on_area_interact_body_entered(body):
-	print("Body Entered")
 	if body.get_parent() is generator:
 		print("Within distance of a generator")
 		interactable = body.get_parent()

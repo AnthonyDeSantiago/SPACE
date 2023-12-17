@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://djqldkhfm7mwj"]
+[gd_scene load_steps=23 format=3 uid="uid://djqldkhfm7mwj"]
 
 [ext_resource type="Script" path="res://Scripts/simple_char.gd" id="1_u21o5"]
 [ext_resource type="Script" path="res://Scenes/Marker2D.gd" id="1_umd6g"]
+[ext_resource type="Texture2D" uid="uid://mbnos3ck4t0k" path="res://Art/Big_Ol_Arrow.png" id="2_76dkq"]
 [ext_resource type="Texture2D" uid="uid://csgdpmf6cujc0" path="res://Art/Flash_Light.png" id="4_3sp3q"]
 [ext_resource type="Texture2D" uid="uid://ccwobq38bksje" path="res://Art/playerlightsource.png" id="4_jyfp6"]
 [ext_resource type="Texture2D" uid="uid://y47jj3vnqexd" path="res://Art/player_walk-Sheet.png" id="6_8pqti"]
@@ -110,6 +111,14 @@ radius = 128.265
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_u21o5")
+
+[node name="Marker_Pointer" type="Marker2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="BigOlArrow" type="Sprite2D" parent="Marker_Pointer"]
+visible = false
+light_mask = 2
+texture = ExtResource("2_76dkq")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-19, 0)
