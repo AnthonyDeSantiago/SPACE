@@ -81,7 +81,9 @@ func _on_generator_timer_timeout():
 	generator_timer.stop()
 	var gen: generator = generator_array.pick_random()
 	gen.break_generator()
+	$simple_char.broken_gen = gen
 
 func _on_generator_fixed():
-	print("On Generaotr fixed called")
+	print("On Generator fixed called")
 	generator_timer.start()
+	$simple_char.broken_gen = null

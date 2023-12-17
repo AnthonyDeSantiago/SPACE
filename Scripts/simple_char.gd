@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var timer_invulnerability: Timer = $Timer
 @onready var is_invulnerable = false
 @onready var interactable: generator
+@onready var broken_gen: generator
 
 signal player_was_hurt(damage)
 
@@ -19,7 +20,6 @@ signal player_regen()
 var shot_ready = true
 
 func _physics_process(delta):
-	
 	#anim.play("run")
 	var vertical = Input.get_axis("up", "down")
 	var horizontal = Input.get_axis("left", "right")
