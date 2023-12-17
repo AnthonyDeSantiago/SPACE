@@ -84,5 +84,5 @@ text = "QUIT"
 label_settings = SubResource("LabelSettings_6lfmn")
 
 [connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="quit_button" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_texture_button_pressed"]
