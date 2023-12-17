@@ -24,7 +24,7 @@
 [ext_resource type="Script" path="res://Scripts/Alarm_Rotating.gd" id="17_fsl64"]
 [ext_resource type="Script" path="res://Scenes/Typed_Text.gd" id="18_64oxe"]
 [ext_resource type="AudioStream" uid="uid://bb18aksg68i2y" path="res://Audio/Race to Mars.mp3" id="19_huv8p"]
-[ext_resource type="PackedScene" uid="uid://dq8fpb4j710kx" path="res://Scenes/generator.tscn" id="20_xus0c"]
+[ext_resource type="PackedScene" path="res://Scenes/generator.tscn" id="20_xus0c"]
 [ext_resource type="Texture2D" uid="uid://dkv218g4oousm" path="res://Art/Big_Ol_Arrow.png" id="22_84b5l"]
 [ext_resource type="Script" path="res://Scripts/BigOlArrow.gd" id="23_wsdla"]
 
@@ -212,6 +212,7 @@ font_size = 32
 
 [node name="Anthony_Level" type="Node2D"]
 script = ExtResource("1_ed44a")
+enemy_speed_cap = 450
 gen_breakdown_time = 5
 
 [node name="Floor" type="TileMap" parent="."]
@@ -288,9 +289,10 @@ scale = Vector2(1.8125, 1.8125)
 sprite_frames = SubResource("SpriteFrames_lvgf0")
 
 [node name="Score" type="GridContainer" parent="CanvasLayer"]
-offset_left = 481.0
-offset_right = 741.0
-offset_bottom = 40.0
+offset_left = 351.0
+offset_top = 1.0
+offset_right = 611.0
+offset_bottom = 41.0
 columns = 2
 
 [node name="Score_Text" type="Label" parent="CanvasLayer/Score"]
@@ -502,6 +504,7 @@ texture = ExtResource("22_84b5l")
 script = ExtResource("23_wsdla")
 
 [node name="Temp_Decrement_Timer" type="Timer" parent="."]
+wait_time = 1.5
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

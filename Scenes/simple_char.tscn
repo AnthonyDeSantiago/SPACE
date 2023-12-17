@@ -164,7 +164,7 @@ stream = ExtResource("7_nckg5")
 volume_db = -7.0
 
 [node name="AltFire" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 7.0
 
 [node name="Area_Interact" type="Area2D" parent="."]
 
