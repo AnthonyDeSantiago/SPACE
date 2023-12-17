@@ -79,14 +79,14 @@ func _on_simple_char_player_regen():
 	
 
 func _on_simple_char_player_cooldown():
-	$CanvasLayer/HUD/AnimatedSprite2D.visible(true)
+	$CanvasLayer/HUD/AnimatedSprite2D.visible = true
 	anim.play("default")
 	
 
 
 func _on_simple_char_player_cooldown_over():
 	anim.stop()
-	$CanvasLayer/HUD/AnimatedSprite2D.visible(false)
+	$CanvasLayer/HUD/AnimatedSprite2D.visible = false
 	
 
 
