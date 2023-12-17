@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://brtygpl5thx06"]
 
-[ext_resource type="Script" path="res://Scripts/simple_proj.gd" id="1_r15u5"]
+[ext_resource type="Script" path="res://Scenes/red_proj.gd" id="1_52ln7"]
 [ext_resource type="Texture2D" uid="uid://bt38i54l2n01u" path="res://Art/simple_red_proj.png" id="2_qne03"]
 [ext_resource type="Texture2D" uid="uid://emynobwnbptj" path="res://Art/light_source.png" id="3_bdgl2"]
 
@@ -9,8 +9,8 @@ radius = 18.0
 height = 38.0
 
 [node name="Simple_Projectile" type="CharacterBody2D"]
-script = ExtResource("1_r15u5")
-SPEED = 2000.0
+script = ExtResource("1_52ln7")
+SPEED = 300.0
 
 [node name="SimpleProj" type="Sprite2D" parent="."]
 position = Vector2(1.90735e-06, 1.90735e-06)

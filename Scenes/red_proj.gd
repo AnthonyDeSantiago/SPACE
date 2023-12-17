@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Simple_Projectile
+class_name Red_Projectile
 @export var SPEED = 1200.0
 @export var damage = 25
 
@@ -16,7 +16,7 @@ func _physics_process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.has_node("Component_Health"):
-		#player_regen.emit()
+		player_regen.emit()
 		var component_health = body.get_node("Component_Health")
 		print("Hit with component_health")
 		component_health.take_damage(damage)
